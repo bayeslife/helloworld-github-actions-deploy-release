@@ -22,7 +22,7 @@ function getEnvironment(column){
                 type: "private",
             });
         
-            console.log(response.data)
+            //console.log(response.data)
         }catch(ex){
             console.log(ex)
         }

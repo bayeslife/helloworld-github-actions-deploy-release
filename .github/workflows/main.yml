@@ -19,12 +19,9 @@ jobs:
         node-version: '12'
 
     - name: Install dependencies
-      run: echo ${{secrets.SUPERSECRET}}
-
-    - name: Install dependencies
       run: npm install
 
-    - name: Show run
+    - name: Show Deployment Action
       run: EVENT=${{ github.event_path }} SECRET=${{secrets.SUPERSECRET}} npm run deploy
 
     
