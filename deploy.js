@@ -1,4 +1,4 @@
-let secret = process.env.GITHUB_API
+let secret = process.env.SECRET
 
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: secret });
