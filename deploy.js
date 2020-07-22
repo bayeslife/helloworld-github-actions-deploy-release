@@ -1,29 +1,37 @@
 
 const { Octokit } = require("@octokit/core");
-const octokit = new Octokit({ auth: `8280867260b138da61789fa34234832971d253e2` });
+const octokit = new Octokit({ auth: `a43716b3e584c153ee5979e7e5d25b00696f2ba4` });
 
 let event = require(process.env.EVENT)
 console.log(JSON.stringify(event,null,' '))
+console.log(event.note)
 
-async function getEnvironment(column_id){
-    return new Promise((resolve)=>{
+let col = event.project_card.column_id
+
+//let col = '10119362'
+
+function getEnvironment(column){
+    return new Promise(async (resolve)=>{
         try {
-            octokit.request(`GET /projects/columns/:col`, {
+            const response = await octokit.request(`GET /projects/columns/:col`, {
                 headers: {
                     'Content-Type':'application/json',
                     'Accept': 'application/vnd.github.inertia-preview+json'
                 },
-                col: column_id,
+                col: column,
                 type: "private",
-            }).then(response=>{
-                resolve(response.data)
-            })
+            });
+        
+            console.log(response.data)
         }catch(ex){
             console.log(ex)
         }
     })
 }
 
-getEnvironment(event.project_card.column_id).then(carddata=>{
-    console.log(`Deploy Release ${event.note} to environment ${carddata.name}`)
-})
+async function run(){
+    let environment = await getEnvironment(col)
+    console.log(environment)
+}
+
+run()
