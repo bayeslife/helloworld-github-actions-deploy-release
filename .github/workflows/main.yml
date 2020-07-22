@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
+    - name: Show stuff
+      run: pwd 
     - name: Show run
-      run: ls
-      run: pwd
       run: EVENT=${{ github.event_path }} npm run deploy
