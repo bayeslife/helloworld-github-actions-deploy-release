@@ -1,0 +1,16 @@
+{
+  "name": "2020-07-23-github-actions-trigger-release-deployment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git:bayeslife/helloworld-github-actions-deploy-release.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
