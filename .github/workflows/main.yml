@@ -25,6 +25,6 @@ jobs:
       run: npm install
 
     - name: Show run
-      run: EVENT=${{ github.event_path }} SECRET=${{secret.GITHUB_API}} npm run deploy
+      run: EVENT=${{ github.event_path }} SECRET=${{secrets.GITHUB_API}} npm run deploy
 
     
