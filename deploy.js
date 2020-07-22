@@ -30,7 +30,7 @@ function getEnvironment(column){
 
 async function run(){
     let environment = await getEnvironment(col)
-    console.log(`Deploy release ${event.project_card.note} to environment ${environment.name}`)
+    console.log(`Deploy release [${event.project_card.note.trim()}] to environment [${environment.name}]`)
 }
 
 run()
