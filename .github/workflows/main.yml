@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: '12'
 
-    - name: Show stuff
-      run: ls
+    - name: Install dependencies
+      run: npm install
 
     - name: Show run
       run: EVENT=${{ github.event_path }} npm run deploy

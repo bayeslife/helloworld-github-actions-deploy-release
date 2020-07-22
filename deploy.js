@@ -8,15 +8,16 @@ console.log(JSON.stringify(event,null,' '))
 async function getEnvironment(column_id){
     return new Promise((resolve)=>{
         try {
-            const response = await octokit.request(`GET /projects/columns/:col`, {
+            octokit.request(`GET /projects/columns/:col`, {
                 headers: {
                     'Content-Type':'application/json',
                     'Accept': 'application/vnd.github.inertia-preview+json'
                 },
                 col: column_id,
                 type: "private",
-            });
-            resolve(response.data)
+            }).then(response=>{
+                resolve(response.data)
+            })
         }catch(ex){
             console.log(ex)
         }
