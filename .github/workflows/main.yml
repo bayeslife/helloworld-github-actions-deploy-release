@@ -14,4 +14,6 @@ jobs:
       
     steps:
     - name: Show run
+      run: ls
+      run: pwd
       run: EVENT=${{ github.event_path }} npm run deploy
