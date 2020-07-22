@@ -5,7 +5,6 @@ const octokit = new Octokit({ auth: secret });
 
 let event = require(process.env.EVENT)
 console.log(JSON.stringify(event,null,' '))
-console.log(event.note)
 
 let col = event.project_card.column_id
 
@@ -32,7 +31,7 @@ function getEnvironment(column){
 
 async function run(){
     let environment = await getEnvironment(col)
-    console.log(environment)
+    console.log(`Deploy release ${event.note} to environment ${environment.name}`)
 }
 
 run()
