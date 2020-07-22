@@ -1,6 +1,7 @@
+let secret = process.env.GITHUB_API
 
 const { Octokit } = require("@octokit/core");
-const octokit = new Octokit({ auth: `a43716b3e584c153ee5979e7e5d25b00696f2ba4` });
+const octokit = new Octokit({ auth: secret });
 
 let event = require(process.env.EVENT)
 console.log(JSON.stringify(event,null,' '))
