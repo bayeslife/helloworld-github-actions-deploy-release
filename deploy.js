@@ -1,7 +1,5 @@
 
-
-
 let event = require(process.env.EVENT)
-console.log(event)
+console.log(JSON.stringify(event,null,''))
 
 
