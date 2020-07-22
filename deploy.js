@@ -21,8 +21,7 @@ function getEnvironment(column){
                 col: column,
                 type: "private",
             });
-        
-            //console.log(response.data)
+            resolve(response.data)
         }catch(ex){
             console.log(ex)
         }
