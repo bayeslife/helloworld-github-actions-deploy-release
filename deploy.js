@@ -5,7 +5,7 @@ const octokit = new Octokit({ auth: `8280867260b138da61789fa34234832971d253e2` }
 let event = require(process.env.EVENT)
 console.log(JSON.stringify(event,null,' '))
 
-function getEnvironment(column_id){
+async function getEnvironment(column_id){
     return new Promise((resolve)=>{
         try {
             const response = await octokit.request(`GET /projects/columns/:col`, {
