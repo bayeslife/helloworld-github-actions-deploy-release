@@ -1,0 +1,17 @@
+# This is a basic workflow to deploy a release artifact
+
+name: GITHUB_ACTIONS_DEPLOY_HELLOWORLD
+
+on:
+ project_column:
+    types: [moved]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+      
+    steps:
+    - name: Show run
+      run: echo 'Running now'
