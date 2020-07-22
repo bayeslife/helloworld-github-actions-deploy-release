@@ -4,7 +4,7 @@ const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: secret });
 
 let event = require(process.env.EVENT)
-console.log(JSON.stringify(event,null,' '))
+//console.log(JSON.stringify(event,null,' '))
 
 let col = event.project_card.column_id
 
